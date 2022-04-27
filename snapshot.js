@@ -1,9 +1,10 @@
+require('dotenv').config()
 const SitemapGenerator = require('sitemap-generator');
 const fs = require('fs')
 
 const website = ""
 
-//Use only if you need basic auth to access website
+//Use only if you need basic auth to access your website
 const username = ""
 const password = ""
 
@@ -15,10 +16,10 @@ module.exports = async () => {
 
         // create generator
         const generator = SitemapGenerator(website, {
-            stripQuerystring: false,
+            // Modify these options as per your requirements
+            stripQuerystring: true,
             respectRobotsTxt: false,
             allowInitialDomainChange: true,
-            maxDepth: 5,
             needsAuth:username&&password,
             authPass:username,
             authPass:password,
@@ -32,7 +33,7 @@ module.exports = async () => {
 
         // register event listeners
         generator.on('done', () => {
-            fs.writeFileSync('errors.json', errors)
+            fs.writeFileSync('errors.json', JSON.stringify(errors))
             resolve(urls)
         });
 
