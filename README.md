@@ -1,6 +1,6 @@
 # Scriptless Percy
 
-Sometimes websites are static in nature and to be able capture snapshot of different pages on website using percy without writing a piece of code the sitemaps can be used. Percy by default supports [sitemaps](https://docs.percy.io/docs/cli-snapshot#commands). In case you don't have sitemaps on your websites and still want to use percy without mentioning any url by yourself then this repo can be useful. 
+scriptless-percy allows you to auto-generate sitemap for your web application at runtime and integrates with Percy sitemaps feature to achieve visual comparison of your static sitemap pages end to end. 
 
 ## Installation
 
