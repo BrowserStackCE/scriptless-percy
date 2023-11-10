@@ -12,37 +12,13 @@ npm install
 
 ```
 
-- Export Percy Token
-
-```
-//MacOS or Linux
-
-export PERCY_TOKEN=<Your Percy Token>
-
-//Windows
-
-set PERCY_TOKEN=<Your Percy Token>
-
+- Create a `.env` and Add your percy token & and branch to it
+```shell
+PERCY_BRANCH=<branch-name>
+PERCY_TOKEN=<percy-token>
 ```
 
-- Add your website to snapshot.js
+- Run your test
+WEBSITE=https://percy.io npx percy snapshot snapshot.js
 
-```js
-
-const website = "<Your website Url>"
-
-//Use only if you need basic auth to access website
-const username = "<Your Basic Auth Username>"
-const password = "<Your Basic Auth Password>"
-
-```
-
-- Run the code
-
-```
-npm run percy
-```
-
-## Disclaimer
-This Repo is dependant on third party package ```sitemap-generator```. 
-Browserstack does not own or manage this package. 
+note: this assumes your sitemap is located on https://percy.io/sitemap.xml
